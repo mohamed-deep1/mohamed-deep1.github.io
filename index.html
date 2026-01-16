@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Website</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>It works 🎉</h1>
-  <p>this my website and used to my personal usage</p>
+<h2>XSS LAB Login</h2>
+
+<input id="user" placeholder="username">
+<input id="pass" placeholder="password" type="password">
+<button onclick="login()">Login</button>
+
+<p>
+attacker / attacker123<br>
+victim / victim123
+</p>
+
+<script src="js/auth.js"></script>
 </body>
 </html>
