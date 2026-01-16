@@ -1,5 +1,5 @@
 // ---------- LOGIN ----------
-function login(){
+function dologin(){
   if (
     (user.value === "attacker" && pass.value === "attacker123") ||
     (user.value === "victim" && pass.value === "victim123")
@@ -95,3 +95,4 @@ function loadBio(){
 }
 
 init();
+
