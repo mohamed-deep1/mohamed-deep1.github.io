@@ -1,20 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>XSS Lab</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2>XSS LAB Login</h2>
 
-<input id="user" placeholder="username">
-<input id="pass" placeholder="password" type="password">
-<button onclick="login()">Login</button>
+<h1>XSS Training Lab</h1>
 
-<p>
-attacker / attacker123<br>
-victim / victim123
-</p>
+<!-- LOGIN -->
+<section id="login">
+  <h2>Login</h2>
+  <input id="user" placeholder="username">
+  <input id="pass" type="password" placeholder="password">
+  <button onclick="login()">Login</button>
+  <p>attacker / attacker123<br>victim / victim123</p>
+</section>
 
-<script src="js/auth.js"></script>
+<!-- DASHBOARD -->
+<section id="dash" class="hidden">
+  <p>User: <span id="cu"></span></p>
+  <p>Mode: <span id="mode"></span></p>
+  <button onclick="toggleMode()">Toggle Secure/Insecure</button>
+
+  <hr>
+
+  <!-- REFLECTED XSS -->
+  <h3>Reflected XSS (Search)</h3>
+  <input id="search">
+  <button onclick="reflected()">Search</button>
+  <p id="searchOut"></p>
+
+  <hr>
+
+  <!-- STORED XSS -->
+  <h3>Stored XSS (Comments)</h3>
+  <textarea id="comment"></textarea><br>
+  <button onclick="store()">Post</button>
+  <div id="comments"></div>
+
+  <hr>
+
+  <!-- DOM XSS -->
+  <h3>DOM XSS</h3>
+  <input id="domInput">
+  <button onclick="dom()">Run</button>
+  <p id="domOut"></p>
+
+  <hr>
+
+  <!-- PROFILE -->
+  <h3>Profile Bio</h3>
+  <textarea id="bio"></textarea><br>
+  <button onclick="saveBio()">Save Bio</button>
+  <div id="bioOut"></div>
+
+  <hr>
+  <button onclick="logout()">Logout</button>
+</section>
+
+<script src="app.js"></script>
 </body>
 </html>
